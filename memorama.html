@@ -70,7 +70,7 @@ table{
 
                 check[num]++;
                 datos[i][j] = num;
-                texto+="<td>"+"<img class='carta' src='img/"+num+".jpg'></td>";
+                texto+="<td>"+"<img class='carta' src='Img/"+num+".jpg'></td>";
             }
             texto+="</tr>";
         }
@@ -89,7 +89,7 @@ table{
             texto+="<tr>";
             for(j=0; j<4; j++)
             {
-                texto+="<td>"+"<img src='img/oculta.jpg' class='carta' id='"+num+"' onclick='voltear("+num+","+i+","+j+")'></td>";
+                texto+="<td>"+"<img src='Img/oculta.jpg' class='carta' id='"+num+"' onclick='voltear("+num+","+i+","+j+")'></td>";
                 num++;
             }
             texto+="</tr>";
@@ -101,7 +101,7 @@ table{
     
     function voltear(id,i,j){
         selecciones++;
-        document.getElementById(id).src='img/'+datos[i][j]+'.jpg';
+        document.getElementById(id).src='Img/'+datos[i][j]+'.jpg';
         
         if(selecciones == 1)
         {
@@ -131,7 +131,7 @@ table{
     function regresar_cartas(id){
         for(i=0; i<2; i++)
         {
-            document.getElementById(posicion[i]).src='img/oculta.jpg';
+            document.getElementById(posicion[i]).src='Img/oculta.jpg';
         }
     }
 </script>
