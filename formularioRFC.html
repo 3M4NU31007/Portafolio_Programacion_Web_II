@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RFC</title>
+</head>
+<body>
+<h1>RFC</h1>
+<form id="miform" action="#" onSubmit="generaRFC();">
+    	Nombre: <input type="text" name="nombre"><br>
+        Apellido Paterno: <input type="text" id="paterno" name="paterno"><br>
+        Apellido Materno: <input type="text" name="materno"><br>
+        Fecha de nacimiento: (aa/mm/dd) <input type="date" name="dia" id="fecha"><br>
+        Genero: 
+	<input type="radio" value="None" id="male" name="gender" />
+	<label for="male" class="radio" chec>M</label>
+	<input type="radio" value="None" id="female" name="gender" />
+    	<label for="female" class="radio">F</label>
+    
+	<input type="submit" value="Enviar" class="button">
+</form>
+<br>RFC:<div id="demo"></id><br> 
+<script>
+function generaRFC(){
+	var homo="0123456789abcdefghijklmnopqrstuvwxyz";
+	var rfc="";
+	var letraNombre = document.getElementById("miform").nombre.value;
+	var letraApellido1 =  document.getElementById("paterno").value;
+	var letraApellido2 =  document.getElementById("miform").materno.value;
+	var fecha =document.getElementById("miform").fecha.value;
+	
+	rfc = letraApellido1.slice(0,2);
+	rfc += letraApellido2.slice(0,1);
+	rfc += letraNombre.slice(0,1);
+	rfc +=fecha.slice(0,2);
+	rfc +=fecha.slice(5,6);
+	rfc +=fecha.slice(8,10);
+	for(i=0;i<3;i++)
+	   rfc +=homo[Math.floor(Math.random()*36)];
+	
+	rfc = rfc.toUpperCase();
+	alert(rfc);
+	document.getElementById("demo").innerHTML =rfc;
+	document.write("RFC generado: "+rfc);
+	console.log(rfc);//DEBUGGER F12
+}
+</script>
+
+</body>
+</html>
