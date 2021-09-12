@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ahorcado</title>
+    <script>
+        var palabra = ['p','a','l','a','b','r','a'];
+        var oculto = ['_','_','_','_','_','_','_'];
+        var letra,verifica, intentos=0;
+        do{
+            intentos++;
+             letra = prompt("intentos"+intentos+"\n"+oculto + "\nletra:");
+             verifica=validaPSW(palabra,oculto);
+        }while(verifica==0 && intentos<10);
+        if(verifica==1 && intentos<=10) alert("Yess :) "+ palabra);
+        else alert("Superaste el num de intentos");
+        
+        function validaPSW(palabra, oculto)
+        {
+            verifica=1;
+            var x;
+            for(x=0;x<8;x++){
+                if(letra == palabra[x]){
+                    oculto[x]=palabra[x];
+                }                
+            }
+            for(x in palabra){
+                if(oculto[x]!= palabra[x]){
+                    verifica=0;
+                }                
+            }
+            return verifica;
+        }    
+   </script>
+</head>
+<body>
+    <h1>Ahorcado</h1>
+</body>
+</html>
