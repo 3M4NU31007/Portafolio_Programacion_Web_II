@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.carta {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+} 
+td{
+    border: 5px solid rgba(0, 0, 0, 0.39);
+}
+table{
+    border: none;
+}
+.Btn{
+    background: rgb(73, 73, 73);
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    padding: 5px;
+    width: 30%;
+}
+.let{
+    width: 300px;
+}
+.ac{
+    background-color: rgb(30, 126, 6);
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    float: right;
+    width: 66%;
+    height: 23px;
+}
+</style>
+<script>
+    var datos = new Array(4);
+    var posicion = new Array(2);
+    var comparador = new Array(2);
+    var id, selecciones = 0;
+    var aciertos;
+    
+    function tabla(){
+        var texto = "<table border=1>";
+        var check = [];
+        var i, j, k;
+        var num = 0;
+
+        aciertos = 0;
+        document.getElementById("aciertos").innerHTML="Aciertos: "+aciertos;
+        
+        for (k=0; k<8; k++)
+        {
+            check[k] = 0;
+        } 
+            
+        for (i=0; i<4; i++)
+        { 
+            datos[i] = new Array(4);
+            texto+="<tr>";
+            for (j=0; j<4; j++)
+            { 
+                do{	
+                    num=Math.floor(Math.random()*8)
+                }while(check[num] == 2);//repetido
+
+                check[num]++;
+                datos[i][j] = num;
+                texto+="<td>"+"<img class='carta' src='img/"+num+".jpg'></td>";
+            }
+            texto+="</tr>";
+        }
+            
+        texto+="</table>";
+        document.getElementById("memorama").innerHTML = texto;
+        setTimeout("regresar()",2000);
+    }
+
+    function regresar(){
+        var i, j, num = 0;
+        var texto = "<table border=1>";
+        
+        for(i=0; i<4; i++)
+        {
+            texto+="<tr>";
+            for(j=0; j<4; j++)
+            {
+                texto+="<td>"+"<img src='img/oculta.jpg' class='carta' id='"+num+"' onclick='voltear("+num+","+i+","+j+")'></td>";
+                num++;
+            }
+            texto+="</tr>";
+        }
+
+        texto+="</table>";
+        document.getElementById("memorama").innerHTML=texto;
+    }
+    
+    function voltear(id,i,j){
+        selecciones++;
+        document.getElementById(id).src='img/'+datos[i][j]+'.jpg';
+        
+        if(selecciones == 1)
+        {
+            comparador[0] = datos[i][j];
+            posicion[0] = id;
+        }
+        else
+        {
+            comparador[1] = datos[i][j];
+            posicion[1] = id;
+            selecciones = 0;
+            if(comparador[0] != comparador[1])
+            {
+                regresar_cartas(id);
+            }
+            else
+            {
+                if(comparador[0] == comparador[1])
+                {
+                    aciertos++;
+                    document.getElementById("aciertos").innerHTML="Aciertos: "+aciertos;
+                }
+            }
+        }
+    }
+
+    function regresar_cartas(id){
+        for(i=0; i<2; i++)
+        {
+            document.getElementById(posicion[i]).src='img/oculta.jpg';
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="let">
+        <button class="Btn" id="myBtn" onclick="tabla()">Iniciar</button>
+        <div id="aciertos" class="ac"></div>
+    </div>
+    <p id="memorama"></p>
+</body>
+</html> 
