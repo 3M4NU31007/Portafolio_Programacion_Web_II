@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.non {
+  text-align: center;
+  background-color: #ccc;
+  color: black;
+  width: 50px;
+  height:50px;
+} 
+
+.par {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  width: 50px;
+  height:50px;	
+}
+
+.multiplos {
+	text-align: center;
+	background-color: red;
+	color: white;
+	width: 50px;
+	height: 50px;
+}
+
+</style>
+</head>
+<body>
+<p id="numeros" onclick="tabla()">Da click para ver tabla</p>
+
+<script>
+function tabla(){
+var texto="<table border=1>";
+var check =[];
+var datos = new Array(10);
+var i,j,k,num=0,div=0;
+
+	for (i = 0; i < 100; i++)
+	check[i]=0; 
+		
+	for (i = 0; i < 10; i++) { 
+		datos[i] = new Array(10);
+		texto+="<tr>";
+		for (j = 0; j <10; j++) { 
+			do{	
+				num=Math.floor(Math.random()*100)
+			}while(check[num]==1);//repetido
+			check[num]=1;
+			datos[i][j]=num;
+			if(num%5==0) texto+="<td class='multiplos'>"+num+"</td>";
+			else if(num%2==0) texto+="<td class='par'>"+num+"</td>";
+			else  texto+="<td class='non'>"+datos[i][j]+"</td>";
+				
+		}
+		texto+="</tr>";
+
+	}
+	texto+="</table>";
+  alert(texto);
+  document.getElementById("numeros").innerHTML = texto;
+}
+</script>
+
+</body>
+</html> 
