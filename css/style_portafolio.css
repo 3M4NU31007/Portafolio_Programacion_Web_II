@@ -1,8 +1,18 @@
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 17px;
+    margin: auto;
+    background-color: black;
+}
+
+.cuerpo{
     width: 80%;
     margin: auto;
+}
+
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
 }
 
 .logo{
@@ -16,8 +26,9 @@ body{
     list-style: none;
     padding: 0;
     text-align: center;
-    background-color: black;
-    border-bottom: 5px solid red;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 3px solid green;
     width: 100%;
     margin: auto;
 }
@@ -36,25 +47,33 @@ body{
 }
 
 .nav li a:hover{
-    background-color: red;
+    background-color: green;
 }
 
 .tit1{
-    border-left: 10px solid red;
-    color: black;
-    width: 130px;
+    border-left: 10px solid green;
+    color: white;
+    width: 150px;
     padding-left: 10px;
     font-size: 25px;
 }
 
 .tit1:hover{
-    background-color: red;
-    color: white;
+    background-color: green;
 }
 
 .contenido{
     margin-top: 50px;
     width: 100%;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: green;
 }
 
 .carpetas{
@@ -66,8 +85,8 @@ body{
     width: 35%;
     float: right;
     height: 350px;
-    color: black;
-    border: 1px solid black;
+    color: white;
+    border: 1px solid white;
 }
 
 .contenido_dat{
