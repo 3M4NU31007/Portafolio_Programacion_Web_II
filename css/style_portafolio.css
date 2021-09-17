@@ -79,9 +79,11 @@ a:hover{
 .carpetas{
     width: 64%;
     float: left;
+    background-color: rgba(0, 0, 0, 0.602);
 }
 
 .datos{
+    background-color: rgba(0, 0, 0, 0.602);
     width: 35%;
     float: right;
     height: 350px;
