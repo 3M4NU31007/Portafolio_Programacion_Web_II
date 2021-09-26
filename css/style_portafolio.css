@@ -1,6 +1,6 @@
 body{
     margin: auto;
-    background: black; 
+    background: rgb(29, 29, 29); 
     font-size: 17px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -28,12 +28,12 @@ header{
     margin-top: 20px;
 }
 
-#particles-js{
+/*#particles-js{
     height: 100vh;
     width: 100%;
     position: fixed;
     z-index: -1;
-}
+}*/
 
 .logo{
     margin: auto;
@@ -71,12 +71,30 @@ header{
 }
 
 .nav li a:hover{
+    transition: 0.5s;
+    transition-timing-function: ease-in;
     background-color: orangered;
 }
 
 .contenido{
     margin-top: 70px;
     width: 100%;
+}
+
+.folder{
+    background-image:url('Img/folder2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-property: 'background';
+    transition-duration: 0.5s;
+    width: 120px;
+    height: 90px;
+}
+
+.folder:hover{
+    background-image:url('Img/folder.png');
+    transition-property: "background";
+    background-size: cover;
 }
 
 .carpetas{
@@ -89,10 +107,6 @@ header{
     background-color: rgba(51, 51, 51, 0.459);
 }
 
-.carpetas tr td:hover{
-    background-color: rgba(0, 0, 0, 0.404);
-}
-
 .datos{
     float: right;
 }
@@ -102,8 +116,4 @@ header{
     padding: 15px;
     border-left: 2px solid #52bd94;
     background-color: rgba(51, 51, 51, 0.459);
-}
-
-.datos tr td:hover{
-    background-color: rgba(0, 0, 0, 0.404);
 }

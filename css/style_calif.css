@@ -1,27 +1,23 @@
-.tabla_calif{
-    float: left;
-    margin-bottom: 300px;
+table{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.tabla_calif th{
+table th{
     border: none;
-    padding: 25px;
+    padding: 3px;
     text-transform: uppercase;
     background-color: #52bd94;
-    color: black;
+    color: white;
 }
 
-.tabla_calif tr td{
+table tr td{
     border: none;
-    padding: 25px;
-    text-align: center;
+    padding: 3px;
     background-color: rgba(51, 51, 51, 0.459);
     color: white;
 }
 
-.resultados{
-    position: absolute;
-    top: 760px;
-    font-size: 20px;
-    color: white;
+.td{
+    text-align: center;
 }
