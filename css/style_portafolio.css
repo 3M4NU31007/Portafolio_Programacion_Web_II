@@ -71,30 +71,14 @@ header{
 }
 
 .nav li a:hover{
+    background-color: orangered;
     transition: 0.5s;
     transition-timing-function: ease-in;
-    background-color: orangered;
 }
 
 .contenido{
     margin-top: 70px;
     width: 100%;
-}
-
-.folder{
-    background-image:url('Img/folder2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition-property: 'background';
-    transition-duration: 0.5s;
-    width: 120px;
-    height: 90px;
-}
-
-.folder:hover{
-    background-image:url('Img/folder.png');
-    transition-property: "background";
-    background-size: cover;
 }
 
 .carpetas{
