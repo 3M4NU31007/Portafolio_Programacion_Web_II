@@ -1,0 +1,113 @@
+body{
+    margin: auto;
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 100%),
+                linear-gradient(127deg, rgba(0, 0, 0, 0.8), rgba(0,255,0,0) 100%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 100%);
+}
+
+::-webkit-scrollbar{
+    background-color: black;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: black;
+    border: 1px solid white;
+}
+
+::-webkit-scrollbar-button{
+    background-color: white;
+}
+
+.cuerpo{
+    width: 85%;
+    margin: auto;
+}
+
+/*#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}*/
+
+header{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.logo{
+    border-radius: 100%;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.616);
+}
+
+.nav{
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.787);
+    box-shadow: 5px 5px;
+}
+
+.nav li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.nav li{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav li.active a{
+    background-color: rgba(0, 0, 0, 0.561);
+}
+
+.nav li a:hover{
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+    background-color: rgba(0, 0, 0, 0.561);
+}
+
+.contenido{
+    width: 100%;
+}
+
+.carpetas{
+    float: left;
+    margin-bottom: 50px;
+}
+
+.carpetas tr td{
+    padding: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.616);
+    background-color: rgba(0, 0, 0, 0.787);
+}
+
+.carpetas tr td:hover{
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.883);
+}
+
+.datos{
+    float: right;
+}
+
+.datos tr td{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.616);
+    background-color: rgba(0, 0, 0, 0.787);
+    color: white;
+    padding: 15px;
+}
